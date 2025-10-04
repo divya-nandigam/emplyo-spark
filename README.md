@@ -2,21 +2,21 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771
+**URL**: https://vs code.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use vs code**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and start prompting.
+Simply visit the [vs code Project](https://vs code.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+Changes made via vs code will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in vs code.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -24,10 +24,10 @@ Follow these steps:
 
 ```sh
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <https://github.com/divya-nandigam>
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd <emplyo-spark>
 
 # Step 3: Install the necessary dependencies.
 npm i
@@ -57,14 +57,16 @@ This project is built with:
 - Vite
 - TypeScript
 - React
+- node.js
+- mongoDB
 - shadcn-ui
 - Tailwind CSS
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and click on Share -> Publish.
+Simply open [verscel](https://verscel.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my vs code project?
 
 Yes, you can!
 
