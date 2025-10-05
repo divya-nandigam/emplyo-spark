@@ -52,6 +52,118 @@ export type Database = {
           },
         ]
       }
+      interview_questions: {
+        Row: {
+          created_at: string
+          expected_points: string[] | null
+          id: string
+          question_category: string
+          question_text: string
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          expected_points?: string[] | null
+          id?: string
+          question_category: string
+          question_text: string
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          expected_points?: string[] | null
+          id?: string
+          question_category?: string
+          question_text?: string
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "interview_questions_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "interview_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      interview_responses: {
+        Row: {
+          created_at: string
+          feedback: string | null
+          id: string
+          question_id: string
+          response_text: string
+          score: number | null
+        }
+        Insert: {
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          question_id: string
+          response_text: string
+          score?: number | null
+        }
+        Update: {
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          question_id?: string
+          response_text?: string
+          score?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "interview_responses_question_id_fkey"
+            columns: ["question_id"]
+            isOneToOne: false
+            referencedRelation: "interview_questions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      interview_sessions: {
+        Row: {
+          candidate_email: string
+          candidate_name: string
+          completed_at: string | null
+          created_at: string
+          created_by: string
+          department: string
+          id: string
+          overall_score: number | null
+          position: string
+          recommendation: string | null
+          status: string
+        }
+        Insert: {
+          candidate_email: string
+          candidate_name: string
+          completed_at?: string | null
+          created_at?: string
+          created_by: string
+          department: string
+          id?: string
+          overall_score?: number | null
+          position: string
+          recommendation?: string | null
+          status?: string
+        }
+        Update: {
+          candidate_email?: string
+          candidate_name?: string
+          completed_at?: string | null
+          created_at?: string
+          created_by?: string
+          department?: string
+          id?: string
+          overall_score?: number | null
+          position?: string
+          recommendation?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string | null

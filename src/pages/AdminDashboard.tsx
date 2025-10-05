@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, Calendar, UserPlus, LogOut } from 'lucide-react';
+import { Users, Calendar, UserPlus, LogOut, Sparkles } from 'lucide-react';
 import { EmployeeList } from '@/components/admin/EmployeeList';
 import { AddEmployeeDialog } from '@/components/admin/AddEmployeeDialog';
 import { AttendanceOverview } from '@/components/admin/AttendanceOverview';
 import { toast } from '@/hooks/use-toast';
 
 export default function AdminDashboard() {
+  const navigate = useNavigate();
   const { signOut, user } = useAuth();
   const [stats, setStats] = useState({ employees: 0, presentToday: 0 });
   const [showAddDialog, setShowAddDialog] = useState(false);
@@ -53,10 +55,16 @@ export default function AdminDashboard() {
               <p className="text-sm text-muted-foreground">Employee Management System</p>
             </div>
           </div>
-          <Button onClick={signOut} variant="outline">
-            <LogOut className="mr-2 h-4 w-4" />
-            Sign Out
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={() => navigate('/admin/interviews')} variant="outline">
+              <Sparkles className="mr-2 h-4 w-4" />
+              AI Interviews
+            </Button>
+            <Button onClick={signOut} variant="outline">
+              <LogOut className="mr-2 h-4 w-4" />
+              Sign Out
+            </Button>
+          </div>
         </div>
       </header>
 
