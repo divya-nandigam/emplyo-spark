@@ -10,6 +10,8 @@ import AdminDashboard from "./pages/AdminDashboard";
 import EmployeeDashboard from "./pages/EmployeeDashboard";
 import AIInterview from "./pages/AIInterview";
 import InterviewsList from "./pages/InterviewsList";
+import CoursesPage from "./pages/CoursesPage";
+import QuizPage from "./pages/QuizPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/admin/ai-interview" element={<AIInterview />} />
             <Route path="/admin/interviews" element={<InterviewsList />} />
             <Route path="/employee" element={<EmployeeDashboard />} />
+            <Route path="/employee/courses" element={<CoursesPage />} />
+            <Route path="/employee/quiz/:courseId" element={<QuizPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

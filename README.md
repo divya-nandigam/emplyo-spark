@@ -1,75 +1,152 @@
-# Welcome to your Lovable project
+# Employee Management System (EMS)
 
-## Project info
+A comprehensive full-stack web application for managing employees, attendance, courses, and AI-powered interviews.
 
-**URL**: https://vs code.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771
+## Features
 
-## How can I edit this code?
+### Admin Features
+- Employee management (add, edit, delete, view)
+- Attendance overview and tracking
+- AI-powered candidate interviews with automated evaluation
+- Interview history and analytics
+- Department-based organization
 
-There are several ways of editing your application.
+### Employee Features  
+- Personal profile management
+- Daily attendance check-in/check-out
+- Attendance history tracking
+- Course enrollment and training
+- Quiz assessments with instant feedback
+- Progress tracking
 
-**Use vs code**
+### Courses & Training
+- 8 department-specific courses
+- Interactive quiz assessments
+- Automatic grading and feedback
+- Progress tracking and completion certificates
+- Course enrollment management
 
-Simply visit the [vs code Project](https://vs code.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and start prompting.
+### AI Interview System
+- Automated question generation
+- Candidate response evaluation  
+- Overall score calculation
+- AI recommendations for hiring decisions
 
-Changes made via vs code will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- **Frontend**: React.js, TypeScript, Tailwind CSS
+- **Backend**: Cloud-based backend services
+- **Database**: PostgreSQL with Row-Level Security
+- **Authentication**: Secure JWT-based auth
+- **Mobile**: Capacitor for iOS/Android support
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in vs code.
+## Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```
+├── src/
+│   ├── components/     # Reusable UI components
+│   ├── pages/          # Application pages
+│   ├── contexts/       # React contexts
+│   ├── hooks/          # Custom hooks
+│   └── lib/            # Utility functions
+├── public/             # Static assets
+└── supabase/          # Database migrations & functions
+```
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <https://github.com/divya-nandigam>
+### Prerequisites
+- Node.js 18+ and npm
+- Git
 
-# Step 2: Navigate to the project directory.
-cd <emplyo-spark>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Clone the repository
+```bash
+git clone https://github.com/divya-nandigam/emplyo-spark
+cd emplyo-spark
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Run development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Build for production
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Mobile App Setup
 
-**Use GitHub Codespaces**
+This project is configured with Capacitor for native mobile deployment.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### iOS/Android Setup
 
-## What technologies are used for this project?
+1. Export to GitHub and clone to your local machine
 
-This project is built with:
+2. Install dependencies
+```bash
+npm install
+```
 
-- Vite
-- TypeScript
-- React
-- node.js
-- mongoDB
-- shadcn-ui
-- Tailwind CSS
+3. Add platforms
+```bash
+npx cap add ios
+npx cap add android
+```
 
-## How can I deploy this project?
+4. Build the project
+```bash
+npm run build
+```
 
-Simply open [verscel](https://verscel.dev/projects/79cb058f-0e6a-4930-9419-6a17c37a1771) and click on Share -> Publish.
+5. Sync with native platforms
+```bash
+npx cap sync
+```
 
-## Can I connect a custom domain to my vs code project?
+6. Run on device/emulator
+```bash
+npx cap run android
+# or
+npx cap run ios
+```
 
-Yes, you can!
+**Note**: iOS development requires macOS with Xcode installed. Android requires Android Studio.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Departments
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The system supports the following departments:
+- Engineering
+- Human Resources
+- Marketing
+- Sales  
+- Finance
+- Operations
+- Customer Support
+- Product Management
+
+## Security
+
+- Row-Level Security (RLS) on all database tables
+- Secure authentication with auto-confirm email
+- Role-based access control (Admin/Employee)
+- Protected API endpoints
+
+## Deployment
+
+The application can be deployed to Vercel or any platform supporting Node.js/React apps.
+
+## License
+
+MIT
+
+## Support
+
+For issues and questions, please open an issue in the repository.

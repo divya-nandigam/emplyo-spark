@@ -52,7 +52,7 @@ export function AddEmployeeDialog({ open, onOpenChange, onSuccess }: AddEmployee
         const { error: profileError } = await supabase
           .from('profiles')
           .update({
-            department,
+            department: department as any,
             salary,
           })
           .eq('id', authData.user.id);
@@ -98,7 +98,22 @@ export function AddEmployeeDialog({ open, onOpenChange, onSuccess }: AddEmployee
           </div>
           <div className="space-y-2">
             <Label htmlFor="department">Department</Label>
-            <Input id="department" name="department" />
+            <select 
+              id="department" 
+              name="department" 
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              required
+            >
+              <option value="">Select Department</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+              <option value="Operations">Operations</option>
+              <option value="Customer Support">Customer Support</option>
+              <option value="Product Management">Product Management</option>
+            </select>
           </div>
           <div className="space-y-2">
             <Label htmlFor="salary">Salary</Label>

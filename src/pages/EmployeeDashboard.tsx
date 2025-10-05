@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { LogOut, Clock, Calendar as CalendarIcon, User } from 'lucide-react';
+import { LogOut, Clock, Calendar as CalendarIcon, User, BookOpen } from 'lucide-react';
 import { AttendanceCard } from '@/components/employee/AttendanceCard';
 import { ProfileCard } from '@/components/employee/ProfileCard';
 import { AttendanceHistory } from '@/components/employee/AttendanceHistory';
 
 export default function EmployeeDashboard() {
+  const navigate = useNavigate();
   const { signOut, user } = useAuth();
   const [attendanceCount, setAttendanceCount] = useState(0);
 
@@ -48,10 +50,16 @@ export default function EmployeeDashboard() {
               <p className="text-sm text-muted-foreground">Your workspace</p>
             </div>
           </div>
-          <Button onClick={signOut} variant="outline">
-            <LogOut className="mr-2 h-4 w-4" />
-            Sign Out
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={() => navigate('/employee/courses')} variant="outline">
+              <BookOpen className="mr-2 h-4 w-4" />
+              Courses
+            </Button>
+            <Button onClick={signOut} variant="outline">
+              <LogOut className="mr-2 h-4 w-4" />
+              Sign Out
+            </Button>
+          </div>
         </div>
       </header>
 

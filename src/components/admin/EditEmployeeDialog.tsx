@@ -45,7 +45,7 @@ export function EditEmployeeDialog({ employee, open, onOpenChange, onSuccess }: 
         .from('profiles')
         .update({
           full_name: fullName,
-          department,
+          department: department as any,
           salary,
         })
         .eq('id', employee.id);
@@ -85,7 +85,22 @@ export function EditEmployeeDialog({ employee, open, onOpenChange, onSuccess }: 
           </div>
           <div className="space-y-2">
             <Label htmlFor="department">Department</Label>
-            <Input id="department" name="department" defaultValue={employee.department || ''} />
+            <select 
+              id="department" 
+              name="department" 
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+              defaultValue={employee.department || ''}
+            >
+              <option value="">Select Department</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Sales">Sales</option>
+              <option value="Finance">Finance</option>
+              <option value="Operations">Operations</option>
+              <option value="Customer Support">Customer Support</option>
+              <option value="Product Management">Product Management</option>
+            </select>
           </div>
           <div className="space-y-2">
             <Label htmlFor="salary">Salary</Label>
